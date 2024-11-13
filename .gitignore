@@ -1,0 +1,9 @@
+*.exe
+*.json
+*.ilk
+*.obj
+*.pdb
+*.sqlite
+*.vsidx
+*.wsuo
+*.db
