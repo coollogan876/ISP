@@ -1,98 +1,112 @@
 '''
 7 Segment Display
-Raspberry Pi reference: https://gpiozero.readthedocs.io
 '''
 
 from gpiozero import LED
 import time
+import signal
 
-topLeft = LED(15, initial_value=False)
-top = LED(18, initial_value=False)
-topRight = LED(23, initial_value=False)
+topLeft = LED(27, initial_value=False)
+top = LED(22, initial_value=False)
+topRight = LED(10, initial_value=False)
 
-middle = LED(14, initial_value=False)
+middle = LED(17, initial_value=False)
 
-bottomLeft = LED(24, initial_value=False)
-bottom = LED(25, initial_value=False)
-bottomRight = LED(8, initial_value=False)
+bottomLeft = LED(9, initial_value=False)
+bottom = LED(11, initial_value=False)
+bottomRight = LED(5, initial_value=False)
 
-dp = LED(7, initial_value=False)
+dp = LED(6, initial_value=False)
 
 LEDs = [topLeft, top, topRight, middle, bottomLeft, bottom, bottomRight]
 
 def Clear():
     for led in LEDs:
-        led.off()
+        led.on()
 
 def Zero():
     Clear()
-    topLeft.on()
-    top.on()
-    topRight.on()
-    bottomLeft.on()
-    bottom.on()
-    bottomRight.on()
+    topLeft.off()
+    top.off()
+    topRight.off()
+    bottomLeft.off()
+    bottom.off()
+    bottomRight.off()
+    return 0
 
 def One():
     Clear()
-    topRight.on()
-    bottomRight.on()
+    topRight.off()
+    bottomRight.off()
+    return 1
 
 def Two():
     Clear()
-    top.on()
-    topRight.on()
-    middle.on()
-    bottomLeft.on()
-    bottom.on()
+    top.off()
+    topRight.off()
+    middle.off()
+    bottomLeft.off()
+    bottom.off()
+    return 2
 
 def Three():
     Clear()
-    top.on()
-    topRight.on()
-    middle.on()
-    bottomRight.on()
-    bottom.on()
+    top.off()
+    topRight.off()
+    middle.off()
+    bottomRight.off()
+    bottom.off()
+    return 3
 
 def Four():
     Clear()
-    topLeft.on()
-    middle.on()
-    topRight.on()
-    bottomRight.on()
+    topLeft.off()
+    middle.off()
+    topRight.off()
+    bottomRight.off()
+    return 4
 
 def Five():
     Clear()
-    top.on()
-    topLeft.on()
-    middle.on()
-    bottomRight.on()
-    bottom.on()
+    top.off()
+    topLeft.off()
+    middle.off()
+    bottomRight.off()
+    bottom.off()
+    return 5
 
 def Six():
     Clear()
-    top.on()
-    topLeft.on()
-    bottomLeft.on()
-    bottom.on()
-    bottomRight.on()
-    middle.on()
+    top.off()
+    topLeft.off()
+    bottomLeft.off()
+    bottom.off()
+    bottomRight.off()
+    middle.off()
+    return 6
 
 def Seven():
     Clear()
-    top.on()
-    topRight.on()
-    bottomRight.on()
+    top.off()
+    topRight.off()
+    bottomRight.off()
+    return 7
 
 def Eight():
     Clear()
     for led in LEDs:
-        led.on()
+        led.off()
+    return 8
 
 def Nine():
     Clear()
-    middle.on()
-    topLeft.on()
-    top.on()
-    topRight.on()
-    bottomRight.on()
+    middle.off()
+    topLeft.off()
+    top.off()
+    topRight.off()
+    bottomRight.off()
+    return 9
+
+dp.on()
+
+signal.pause()
