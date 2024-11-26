@@ -6,107 +6,100 @@ from gpiozero import LED
 import time
 import signal
 
-topLeft = LED(27, initial_value=False)
-top = LED(22, initial_value=False)
-topRight = LED(10, initial_value=False)
+class Display:
+    def __init__(self, topLeft, top, topRight, middle, bottomLeft, bottom, bottomRight):
+        self.topLeft = topLeft
+        self.top = top
+        self.topRight = topRight
+        self.middle = middle
+        self.bottomLeft = bottomLeft
+        self.bottom = bottom
+        self.bottomRight = bottomRight
+        self.LEDs = [topLeft, top, topRight, middle, bottomLeft, bottom, bottomRight]
 
-middle = LED(17, initial_value=False)
+    def Clear(self):
+        for led in self.LEDs:
+            led.on()
 
-bottomLeft = LED(9, initial_value=False)
-bottom = LED(11, initial_value=False)
-bottomRight = LED(5, initial_value=False)
+    def Zero(self):
+        self.Clear()
+        self.topLeft.off()
+        self.top.off()
+        self.topRight.off()
+        self.bottomLeft.off()
+        self.bottom.off()
+        self.bottomRight.off()
+        return 0
 
-dp = LED(6, initial_value=False)
+    def One(self):
+        self.Clear()
+        self.topRight.off()
+        self.bottomRight.off()
+        return 1
 
-LEDs = [topLeft, top, topRight, middle, bottomLeft, bottom, bottomRight]
+    def Two(self):
+        self.Clear()
+        self.top.off()
+        self.topRight.off()
+        self.middle.off()
+        self.bottomLeft.off()
+        self.bottom.off()
+        return 2
 
-def Clear():
-    for led in LEDs:
-        led.on()
+    def Three(self):
+        self.Clear()
+        self.top.off()
+        self.topRight.off()
+        self.middle.off()
+        self.bottomRight.off()
+        self.bottom.off()
+        return 3
 
-def Zero():
-    Clear()
-    topLeft.off()
-    top.off()
-    topRight.off()
-    bottomLeft.off()
-    bottom.off()
-    bottomRight.off()
-    return 0
+    def Four(self):
+        self.Clear()
+        self.topLeft.off()
+        self.middle.off()
+        self.topRight.off()
+        self.bottomRight.off()
+        return 4
 
-def One():
-    Clear()
-    topRight.off()
-    bottomRight.off()
-    return 1
+    def Five(self):
+        self.Clear()
+        self.top.off()
+        self.topLeft.off()
+        self.middle.off()
+        self.bottomRight.off()
+        self.bottom.off()
+        return 5
 
-def Two():
-    Clear()
-    top.off()
-    topRight.off()
-    middle.off()
-    bottomLeft.off()
-    bottom.off()
-    return 2
+    def Six(self):
+        self.Clear()
+        self.top.off()
+        self.topLeft.off()
+        self.bottomLeft.off()
+        self.bottom.off()
+        self.bottomRight.off()
+        self.middle.off()
+        return 6
 
-def Three():
-    Clear()
-    top.off()
-    topRight.off()
-    middle.off()
-    bottomRight.off()
-    bottom.off()
-    return 3
+    def Seven(self):
+        self.Clear()
+        self.top.off()
+        self.topRight.off()
+        self.bottomRight.off()
+        return 7
 
-def Four():
-    Clear()
-    topLeft.off()
-    middle.off()
-    topRight.off()
-    bottomRight.off()
-    return 4
+    def Eight(self):
+        self.Clear()
+        for led in self.LEDs:
+            led.off()
+        return 8
 
-def Five():
-    Clear()
-    top.off()
-    topLeft.off()
-    middle.off()
-    bottomRight.off()
-    bottom.off()
-    return 5
-
-def Six():
-    Clear()
-    top.off()
-    topLeft.off()
-    bottomLeft.off()
-    bottom.off()
-    bottomRight.off()
-    middle.off()
-    return 6
-
-def Seven():
-    Clear()
-    top.off()
-    topRight.off()
-    bottomRight.off()
-    return 7
-
-def Eight():
-    Clear()
-    for led in LEDs:
-        led.off()
-    return 8
-
-def Nine():
-    Clear()
-    middle.off()
-    topLeft.off()
-    top.off()
-    topRight.off()
-    bottomRight.off()
-    return 9
-
-dp.on()
-
-signal.pause()
+    def Nine(self):
+        self.Clear()
+        self.middle.off()
+        self.topLeft.off()
+        self.top.off()
+        self.topRight.off()
+        self.bottomRight.off()
+        return 9
