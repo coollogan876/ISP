@@ -18,6 +18,9 @@
 * Immersive backlighting based on [Govee's LED strips](https://us.govee.com/products/govee-gaming-light-strip-g1)
 
 ## Changelog
+### 11/30/24
+* Added a second display to [Dice Display](https://github.com/coollogan876/ISP/blob/main/Pi/diceDisplay.py) 
+  * The code now generates a random number between 0 and 12 and displays it on both screens
 ### 11/25/24
 * Rewrote [Display](https://github.com/coollogan876/ISP/blob/main/Pi/Display.py) into a class
   * Allows making another display and configing pins simpler
@@ -27,7 +30,6 @@
   * Using event handlers allowed button spam/holding to unintentionally roll another random number
 ### 11/23/24
 * Removed Signal.pause() from [Display](https://github.com/coollogan876/ISP/blob/main/Pi/Display.py)
-  * [Dice Display](https://github.com/coollogan876/ISP/blob/main/Pi/diceDisplay.py) Would not run as it would run the pause command and not run anything else
-  * 
+  * [Dice Display](https://github.com/coollogan876/ISP/blob/main/Pi/diceDisplay.py) would not run as it would run the pause command and not run anything else
 ## Author
 - [Logan Dresel](https://www.github.com/coollogan876)
