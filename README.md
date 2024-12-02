@@ -7,6 +7,7 @@
  * [Raspberry Pi GPIO Reference](https://gpiozero.readthedocs.io)
 * [Raspberry Pi Camera Reference](https://datasheets.raspberrypi.com/camera/picamera2-manual.pdf)
 * [Pyvesync Library](https://github.com/webdjoe/pyvesync)
+* [Scikit Image Processing Reference](https://scikit-image.org/docs/stable/api/api.html)
 
 ## Ideas
 
@@ -16,6 +17,7 @@
 * PC audio control board
 * Trigger lights with Pi Camera using the [Pyvesync Library](https://github.com/webdjoe/pyvesync)
 * Immersive backlighting based on [Govee's LED strips](https://us.govee.com/products/govee-gaming-light-strip-g1)
+* Motion detection using [Scikit Image Processing](https://scikit-image.org/)
 
 ## Changelog
 ### 11/30/24
