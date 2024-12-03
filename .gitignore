@@ -9,3 +9,5 @@
 *.vsidx
 *.wsuo
 *.db
+vesync.json
+/.venv
