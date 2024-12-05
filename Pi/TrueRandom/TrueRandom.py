@@ -1,6 +1,6 @@
 from time import sleep
 from picamera2 import Picamera2, Preview
-import TrueRandom.cameraHander
+import TrueRandom.cameraHandler
 from TrueRandom.Seed import Seed
 
 class TrueRandom:

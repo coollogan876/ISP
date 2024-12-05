@@ -10,7 +10,7 @@ from skimage.color import rgb2gray
 import numpy as np
 from PIL import Image
 import TrueRandom.TrueRandom
-import TrueRandom.cameraHander
+import TrueRandom.cameraHandler
 from enum import Enum
 
 class Seed:
