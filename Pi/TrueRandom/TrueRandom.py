@@ -8,9 +8,7 @@ class TrueRandom:
         self.cameraHandler = cameraHandler
         self.seed = Seed(cameraHandler)
         
-
-    def random(self, factor, maxTime, minValue=0, maxValue=100):
+    def random(self, maxTime, factor=None, minValue=0, maxValue=100):
+        if factor is None:
+            return minValue + (self.seed.generateValue(maxTime=maxTime, method=Seed.Method.MT)) % (maxValue - minValue + 1)
         return minValue + (self.seed.generateValue(factor, maxTime, Seed.Method.LCG)) % (maxValue - minValue + 1)
-
-    def random(self, maxTime, minValue=0, maxValue=100):
-        return minValue + (self.seed.generateValue(maxTime=maxTime, method=Seed.Method.MT)) % (maxValue - minValue + 1)
