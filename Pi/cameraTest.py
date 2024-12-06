@@ -11,7 +11,7 @@ import time
 
 camera = Picamera2()
 camera.configure(camera.create_video_configuration())
-camera.set_controls({"AwbEnable": True, "Contrast": 0.4, "Saturation" : 0.75})
+camera.set_controls({"AwbEnable": True, "Contrast": 0.4, "Saturation" : 0.75, "ExposureTime": 5000})
 camera.start_preview(Preview.QTGL)
 camera.start()
 
