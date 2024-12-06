@@ -22,6 +22,11 @@
 ## Changelog
 ### 12/5/24
 * Implemented the [Mersenne Twister method](https://www.sciencedirect.com/topics/computer-science/mersenne-twister) into the [seed generator](https://github.com/coollogan876/ISP/blob/main/Pi/TrueRandom/Seed.py) for better randomness
+* Fixed some errors in the [seed generator](https://github.com/coollogan876/ISP/blob/main/Pi/TrueRandom/Seed.py) and in the [random methods](https://github.com/coollogan876/ISP/blob/main/Pi/TrueRandom/TrueRandom.py)
+  * Python does not allow overloading methods like other languages do.
+  In order to allow different parameters to be used, use var=None
+  * Some variables in the [seed generator](https://github.com/coollogan876/ISP/blob/main/Pi/TrueRandom/Seed.py) that have bitwise operators applied to them can throw an error about it not being type safe. To prevent this use int() to make sure it doesn't throw an error.
+* Managed to generate a random password using blob detection of a lava lamp: KnDTj$Gby%*laKQizDZs
 ### 12/3/24
 * Started working on [a true random number generator](https://github.com/coollogan876/ISP/tree/main/Pi) based on [Cloudflare's lava lamp wall](https://www.cloudflare.com/learning/ssl/lava-lamp-encryption/) used to create encryption keys
 ### 12/2/24 
