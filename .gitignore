@@ -11,3 +11,4 @@
 *.db
 vesync.json
 /.venv
+/myenv
