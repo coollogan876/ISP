@@ -12,3 +12,4 @@
 vesync.json
 /.venv
 /myenv
+/__pycache__
