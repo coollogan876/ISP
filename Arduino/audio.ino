@@ -1,0 +1,1 @@
+int knob1 = A0;
