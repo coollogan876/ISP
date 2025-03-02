@@ -27,6 +27,7 @@
   In order to allow different parameters to be used, use var=None
   * Some variables in the [seed generator](https://github.com/coollogan876/ISP/blob/main/Pi/TrueRandom/Seed.py) that have bitwise operators applied to them can throw an error about it not being type safe. To prevent this use int() to make sure it doesn't throw an error.
 * Managed to generate a random password using blob detection of a lava lamp: KnDTj$Gby%*laKQizDZs
+ According to [security.org](https://www.security.org/how-secure-is-my-password/) It would take approximately 2 quintillion years to crack
 ### 12/3/24
 * Started working on [a true random number generator](https://github.com/coollogan876/ISP/tree/main/Pi) based on [Cloudflare's lava lamp wall](https://www.cloudflare.com/learning/ssl/lava-lamp-encryption/) used to create encryption keys
 ### 12/2/24 
