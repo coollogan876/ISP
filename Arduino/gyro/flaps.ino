@@ -1,6 +1,4 @@
-
 #include <Servo.h>
-#include "PID.h"
 
 int z = 2;
 Servo flaps;
@@ -12,6 +10,7 @@ void setup()
 {
 	pinMode(z, INPUT);
 	flaps.attach(1);
+	flaps.write(0);
 }
 
 void loop()
@@ -23,4 +22,6 @@ void loop()
 		firstRead = false;
 	}
 
+	flaps.write(reading);
+	delay(15);
 }
